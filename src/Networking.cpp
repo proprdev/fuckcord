@@ -13,7 +13,7 @@ void sendMessage(std::string token, std::string guild_id, std::string channel_id
         FILE *devnull = fopen("/dev/null", "w+");
 
         list = curl_slist_append(list, "accept: */*");
-        list = curl_slist_append(list, authorization("MjM0MzM4MTA3OTg0NTc2NTEy.YWxiRw.cLTFyA-wXUcWAB3Kmwuq_zE7V7k").c_str());
+        list = curl_slist_append(list, authorization(token).c_str());
         list = curl_slist_append(list, "Content-Type: application/json");
         list = curl_slist_append(list, "origin: https://discord.com");
         list = curl_slist_append(list, referer(guild_id, channel_id).c_str());
